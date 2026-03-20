@@ -2,15 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import footerSocials from './assets/footer-socials.svg'
 import heroWaveCombined from './assets/hero-wave-combined.svg'
-import iconDashboard from './assets/icon-dashboard.svg'
-import iconFree from './assets/icon-free.svg'
-import iconGemini from './assets/icon-gemini.svg'
-import iconGlass from './assets/icon-glass.svg'
-import iconGoals from './assets/icon-goals.svg'
-import iconNoBloat from './assets/icon-nobloat.svg'
-import iconOffline from './assets/icon-offline.svg'
-import iconPrivacy from './assets/icon-privacy.svg'
-import iconSearch from './assets/icon-search.svg'
 import logo from './assets/logo.png'
 import midOverlay from './assets/mid-overlay.svg'
 import midPhones from './assets/mid-phones.svg'
@@ -57,13 +48,140 @@ function App() {
   }, [])
 
   const whyCards = [
-    { icon: iconSearch, title: 'Free Core Tracking', body: 'Compared to many calorie apps that lock basics behind paywalls, CalPal keeps core logging accessible.' },
-    { icon: iconGemini, title: 'Smarter AI Guidance', body: 'Unlike static calculators, CalPal uses Gemini-powered insights to help personalize your nutrition decisions.' },
-    { icon: iconDashboard, title: 'Fast, Minimal Workflow', body: 'Many apps feel cluttered with too many tabs. CalPal stays focused so logging stays quick and clean.' },
-    { icon: iconOffline, title: 'Works Beyond Perfect Internet', body: 'Where some tools rely heavily on constant connectivity, CalPal supports practical use when network quality drops.' },
-    { icon: iconGoals, title: 'Flexible Goal System', body: 'Instead of one rigid plan, CalPal supports calorie and macro targets that adapt to different fitness styles.' },
-    { icon: iconPrivacy, title: 'Low-Noise Experience', body: 'Compared with ad-heavy alternatives, CalPal is built to reduce distractions and keep focus on progress.' },
+    { icon: 'wallet', title: 'Free Core Tracking', body: 'Compared to many calorie apps that lock basics behind paywalls, CalPal keeps core logging accessible.' },
+    { icon: 'spark', title: 'Smarter AI Guidance', body: 'Unlike static calculators, CalPal uses Gemini-powered insights to help personalize your nutrition decisions.' },
+    { icon: 'bolt', title: 'Fast, Minimal Workflow', body: 'Many apps feel cluttered with too many tabs. CalPal stays focused so logging stays quick and clean.' },
+    { icon: 'signal', title: 'Works Beyond Perfect Internet', body: 'Where some tools rely heavily on constant connectivity, CalPal supports practical use when network quality drops.' },
+    { icon: 'target', title: 'Flexible Goal System', body: 'Instead of one rigid plan, CalPal supports calorie and macro targets that adapt to different fitness styles.' },
+    { icon: 'bellOff', title: 'Low-Noise Experience', body: 'Compared with ad-heavy alternatives, CalPal is built to reduce distractions and keep focus on progress.' },
   ]
+
+  const featureCards = [
+    {
+      icon: 'search',
+      title: 'Track Your Calories for Free',
+      body: 'Log meals quickly and track your calories without paying anything. Simple, fast, and built for daily use.',
+      peekSide: 'left',
+    },
+    {
+      icon: 'dashboard',
+      title: 'AI Health Profile + Weekly Plans',
+      body: 'Add your height, weight, and other health details to get AI-generated calorie plans updated every week.',
+    },
+    {
+      icon: 'privacy',
+      title: 'No API Key Needed (Coming Soon)',
+      body: 'We’re removing the need for users to add their own API key and moving to a cleaner, more reliable Gemini 2.5 Flash-Lite experience for non-tech users.',
+      peekSide: 'right',
+    },
+  ]
+
+  const renderFeatureIcon = (icon) => {
+    const common = {
+      viewBox: '0 0 24 24',
+      fill: 'none',
+      stroke: 'currentColor',
+      strokeWidth: '1.9',
+      strokeLinecap: 'round',
+      strokeLinejoin: 'round',
+      'aria-hidden': 'true',
+      className: 'feature-icon-svg',
+    }
+
+    switch (icon) {
+      case 'search':
+        return (
+          <svg {...common}>
+            <circle cx="11" cy="11" r="5.5" />
+            <path d="M15.2 15.2L19 19" />
+          </svg>
+        )
+      case 'dashboard':
+        return (
+          <svg {...common}>
+            <rect x="4" y="4" width="6.5" height="6.5" rx="1.3" />
+            <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.3" />
+            <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.3" />
+            <path d="M17 13.5v6.5" />
+            <path d="M13.75 16.75h6.5" />
+          </svg>
+        )
+      case 'privacy':
+        return (
+          <svg {...common}>
+            <path d="M12 3l6 2.4v5.3c0 4.2-2.5 7.8-6 9.3-3.5-1.5-6-5.1-6-9.3V5.4z" />
+            <rect x="9.2" y="10.5" width="5.6" height="4.8" rx="1.2" />
+            <path d="M10.2 10.5V9.3a1.8 1.8 0 1 1 3.6 0v1.2" />
+          </svg>
+        )
+      default:
+        return null
+    }
+  }
+
+  const renderWhyIcon = (icon) => {
+    const common = {
+      viewBox: '0 0 24 24',
+      fill: 'none',
+      stroke: 'currentColor',
+      strokeWidth: '1.9',
+      strokeLinecap: 'round',
+      strokeLinejoin: 'round',
+      'aria-hidden': 'true',
+      className: 'why-icon-svg',
+    }
+
+    switch (icon) {
+      case 'wallet':
+        return (
+          <svg {...common}>
+            <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h11A2.5 2.5 0 0 1 19 7.5v9A2.5 2.5 0 0 1 16.5 19h-11A2.5 2.5 0 0 1 3 16.5z" />
+            <path d="M16 12h5v3h-5a1.5 1.5 0 0 1 0-3z" />
+          </svg>
+        )
+      case 'spark':
+        return (
+          <svg {...common}>
+            <path d="M12 3l1.6 3.9L17.5 8.5l-3.9 1.6L12 14l-1.6-3.9L6.5 8.5l3.9-1.6z" />
+            <path d="M18.5 14.5l.8 2 .2.8.8.2 2 .8-2 .8-.8.2-.2.8-.8 2-.8-2-.2-.8-.8-.2-2-.8 2-.8.8-.2.2-.8z" />
+          </svg>
+        )
+      case 'bolt':
+        return (
+          <svg {...common}>
+            <path d="M13 2L5 13h5l-1 9 8-11h-5z" />
+          </svg>
+        )
+      case 'signal':
+        return (
+          <svg {...common}>
+            <path d="M4 18a8 8 0 0 1 8-8" />
+            <path d="M4 13a13 13 0 0 1 13-13" />
+            <path d="M9 18a3 3 0 0 1 3-3" />
+            <circle cx="17.5" cy="18" r="1.5" />
+          </svg>
+        )
+      case 'target':
+        return (
+          <svg {...common}>
+            <circle cx="12" cy="12" r="8" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" />
+          </svg>
+        )
+      case 'bellOff':
+        return (
+          <svg {...common}>
+            <path d="M14.5 18a2.5 2.5 0 0 1-5 0" />
+            <path d="M18 13.5V11a6 6 0 0 0-8.9-5.3" />
+            <path d="M6 6.2A6 6 0 0 0 6 11v2.5L4 16h16" />
+            <path d="M3 3l18 18" />
+          </svg>
+        )
+      default:
+        return null
+    }
+  }
 
   return (
     <main className="page-wrap">
@@ -83,13 +201,44 @@ function App() {
             <nav>
               <a className="nav-features" href="#features">Features</a>
               <a className="nav-about" href="#about">About</a>
+              <a className="nav-why" href="#why-calpal">Why CalPal?</a>
             </nav>
-            <button className="nav-cta" type="button">Join Waitlist</button>
+            <a
+              className="nav-cta"
+              href="https://groups.google.com/g/calpal-testers"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join Waitlist
+            </a>
           </header>
 
           <h1>
             Fuel Your Ambition, One <span className="hero-green">Meal at a Time.</span>
           </h1>
+
+          <div className="hero-creator-card">
+            <span className="creator-caption">Built by</span>
+            <span className="creator-name">Shalin Shah</span>
+            <div className="hero-creator-tags">
+              <a
+                className="creator-tag creator-link"
+                href="https://github.com/Shalin-Shah-2002"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                className="creator-tag creator-link"
+                href="https://www.linkedin.com/in/shalin-shah0705/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
 
           <div className="hero-stage">
             <div className="radial-glow" />
@@ -140,33 +289,29 @@ function App() {
           <h2>Features</h2>
           <p>Stop guessing. Start knowing exactly what goes into your body.</p>
           <div className="feature-grid">
-            <article className="feature-card glass peek-card peek-left">
-              <img src={iconSearch} alt="" />
-              <h3>Track Your Calories for Free</h3>
-              <p>Log meals quickly and track your calories without paying anything. Simple, fast, and built for daily use.</p>
-              <img className="peep-guy peep-left" src="/Guy_Peeping.png" alt="" aria-hidden="true" />
-            </article>
-            <article className="feature-card glass">
-              <img src={iconDashboard} alt="" />
-              <h3>AI Health Profile + Weekly Plans</h3>
-              <p>Add your height, weight, and other health details to get AI-generated calorie plans updated every week.</p>
-            </article>
-            <article className="feature-card glass peek-card peek-right">
-              <img src={iconPrivacy} alt="" />
-              <h3>No API Key Needed (Coming Soon)</h3>
-              <p>We’re removing the need for users to add their own API key and moving to a cleaner, more reliable Gemini 2.5 Flash-Lite experience for non-tech users.</p>
-              <img className="peep-guy peep-right" src="/Guy_Peeping.png" alt="" aria-hidden="true" />
-            </article>
+            {featureCards.map((card) => (
+              <article
+                key={card.title}
+                className={`feature-card glass ${card.peekSide ? `peek-card peek-${card.peekSide}` : ''}`.trim()}
+              >
+                <span className="feature-icon" aria-hidden="true">{renderFeatureIcon(card.icon)}</span>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+                {card.peekSide ? (
+                  <img className={`peep-guy peep-${card.peekSide}`} src="/Guy_Peeping.png" alt="" aria-hidden="true" />
+                ) : null}
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="why-calpal">
+        <section className="why-calpal" id="why-calpal">
           <h2>Why CalPal?</h2>
           <p>Built to solve common calorie-tracker pain points: paywalls, clutter, and low-quality personalization.</p>
           <div className="why-grid">
             {whyCards.map((card) => (
               <article className="why-card glass" key={card.title}>
-                <img src={card.icon} alt="" />
+                <span className="why-icon" aria-hidden="true">{renderWhyIcon(card.icon)}</span>
                 <h4>{card.title}</h4>
                 <p>{card.body}</p>
               </article>
@@ -184,7 +329,7 @@ function App() {
                 <br />
                 Experience the future of fitness tracking before anyone else.
               </p>
-              <button className="beta-cta" type="button">Click Here to Join Closed Testing</button>
+              <a className="beta-cta" href="https://groups.google.com/g/calpal-testers" target="_blank" rel="noreferrer">Click Here to Join Closed Testing</a>
               <div className="beta-note">Highlight: Please keep the app installed for at least 14 days (Google Play testing policy).</div>
             </div>
             <div className="beta-right">
@@ -206,13 +351,21 @@ function App() {
               <span>CalPal</span>
             </div>
 
-            <p className="footer-motto">We count calories, not your happiness. 🍕</p>
+            <p className="footer-motto">Healthy goals, zero drama, and fewer “what did I eat?” moments.</p>
+            <p className="footer-copy">CalPal helps you track smarter with AI support while keeping your daily workflow clean and practical.</p>
 
             <div className="footer-links">
               <a href="#features">Features</a>
               <a href="#about">About</a>
               <a href="#">Privacy</a>
-              <a href="#">GitHub</a>
+            </div>
+
+            <div className="footer-creator">
+              <span>Built by Shalin Shah</span>
+              <div className="footer-creator-links">
+                <a href="https://github.com/Shalin-Shah-2002" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/shalin-shah0705/" target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
             </div>
 
             <img className="footer-socials" src={footerSocials} alt="Social links" />
@@ -220,7 +373,7 @@ function App() {
 
           <div className="footer-bottom">
             <span>© 2026 CalPal AI. All rights reserved.</span>
-            <a href="#">Built with love and late-night snacks.</a>
+            <span>Built with focus, consistency, and a little caffeine.</span>
           </div>
         </footer>
       </div>

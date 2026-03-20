@@ -141,18 +141,22 @@ body {
 }
 
 .top-nav a.nav-features { left: 461px; top: 21px; }
-.top-nav a.nav-how { left: 575px; top: 22px; }
-.top-nav a.nav-about { left: 717px; top: 21px; }
+.top-nav a.nav-about { left: 585px; top: 21px; }
+.top-nav a.nav-why { left: 680px; top: 21px; }
 
-.nav-cta {
+.top-nav .nav-cta {
   position: absolute;
   left: 1058px;
   top: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   border-radius: 44px;
   padding: 10px 24px;
   background: #00c753;
-  color: #0a0e27;
+  color: #000;
+  text-decoration: none;
   font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -177,6 +181,69 @@ body {
 
 .hero h1 .hero-green {
   color: #00c753;
+}
+
+.hero-creator-card {
+  position: absolute;
+  right: calc(var(--hero-content-offset) + 36px);
+  top: 288px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  z-index: 11;
+}
+
+.creator-caption {
+  color: #9fb0c3;
+  font-family: Lexend, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.creator-name {
+  color: #f1f5f9;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.hero-creator-tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.creator-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 41, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  color: #cdd8e5;
+  text-decoration: none;
+  font-family: Lexend, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.creator-link {
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.creator-link:hover {
+  color: #00c753;
+  border-color: rgba(0, 199, 83, 0.35);
+  background: rgba(0, 199, 83, 0.05);
 }
 
 .hero-stage {
@@ -439,6 +506,11 @@ body {
   padding-bottom: 88px;
 }
 
+.why-calpal {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
 .features h2 {
   margin: 0;
   text-align: center;
@@ -549,6 +621,24 @@ body {
   margin-bottom: 16px;
 }
 
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(0, 199, 83, 0.12);
+  border: 1px solid rgba(0, 199, 83, 0.22);
+  color: #00c753;
+}
+
+.feature-icon-svg {
+  width: 22px;
+  height: 22px;
+}
+
 .why-card img {
   width: 48px;
   height: 48px;
@@ -556,6 +646,24 @@ body {
   border-radius: 999px;
   background: rgba(0, 199, 83, 0.12);
   border: 1px solid rgba(0, 199, 83, 0.22);
+}
+
+.why-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(0, 199, 83, 0.12);
+  border: 1px solid rgba(0, 199, 83, 0.22);
+  color: #00c753;
+}
+
+.why-icon-svg {
+  width: 22px;
+  height: 22px;
 }
 
 .feature-card img:not(.peep-guy) {
@@ -693,8 +801,9 @@ body {
 
 .beta-section {
   width: 100%;
+  max-width: 1180px;
+  margin: 0 auto 64px;
   padding: 0 24px;
-  margin-bottom: 64px;
 }
 
 .beta-main {
@@ -750,12 +859,16 @@ body {
 }
 
 .beta-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 56px;
   border: 0;
   border-radius: 28px;
   padding: 0 36px;
   background: #00c753;
   color: #0a0e27;
+  text-decoration: none;
   font-family: Lexend, sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -801,6 +914,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
   padding: 0 24px;
 }
 
@@ -829,7 +944,10 @@ body {
 
 .footer {
   width: 100%;
+  max-width: 1180px;
   margin-top: 56px;
+  margin-left: auto;
+  margin-right: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 48px 24px 28px;
 }
@@ -839,7 +957,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .footer-brand {
@@ -860,10 +978,20 @@ body {
 
 .footer-motto {
   margin: 0;
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-family: Lexend, sans-serif;
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.4;
+  max-width: 780px;
+}
+
+.footer-copy {
+  margin: 0;
+  color: #94a3b8;
+  font-family: Lexend, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 760px;
 }
 
 .footer-links {
@@ -889,7 +1017,44 @@ body {
 .footer-socials {
   width: 140px;
   height: auto;
-  opacity: 0.85;
+  opacity: 0.75;
+}
+
+.footer-creator {
+  margin-top: 8px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 41, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-creator > span {
+  color: #f1f5f9;
+  font-family: Lexend, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer-creator-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-creator-links a {
+  color: #00c753;
+  text-decoration: none;
+  font-family: Lexend, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer-creator-links a:hover {
+  color: #3bde80;
 }
 
 .footer-bottom {
@@ -912,6 +1077,12 @@ body {
   text-decoration: none;
 }
 
+.footer-bottom span {
+  color: #64748b;
+  font-family: Lexend, sans-serif;
+  font-size: 14px;
+}
+
 .footer-bottom a:hover {
   color: #f1f5f9;
 }
@@ -920,6 +1091,21 @@ body {
 @media (max-width: 1024px) {
   .pill { display: none; } /* Hide floating pills on smaller screens to avoid overflow */
   .hero-wave { width: 1000px; }
+  .hero-creator-tags {
+    width: 100%;
+    gap: 8px;
+  }
+  .hero-creator-card {
+    right: 20px;
+    top: 336px;
+    width: min(320px, calc(100% - 40px));
+    align-items: center;
+  }
+  .creator-tag {
+    height: 30px;
+    padding: 0 11px;
+    font-size: 11px;
+  }
   .mid-showcase { flex-direction: column; }
   .mid-phones, .mid-text-content { width: 100%; }
   .feature-grid { grid-template-columns: 1fr; }
