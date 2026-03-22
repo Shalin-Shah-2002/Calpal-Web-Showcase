@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import footerSocials from './assets/footer-socials.svg'
+import heroVideo from './assets/Cinematic_Running_Man_Phone_App.mp4'
 import heroWaveCombined from './assets/hero-wave-combined.svg'
 import logo from './assets/logo.png'
 import midOverlay from './assets/mid-overlay.svg'
@@ -191,6 +192,19 @@ function App() {
           className={`hero ${heroScrollProgress > 0.42 ? 'hero-pill-behind' : ''}`}
           style={{ '--hero-scroll-progress': heroScrollProgress }}
         >
+          <div className="hero-video-wrap" aria-hidden="true">
+            <video
+              className="hero-video"
+              src={heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+            <div className="hero-video-overlay" />
+          </div>
+
           <div className="hero-gradient" />
 
           <header className="top-nav">
@@ -216,6 +230,29 @@ function App() {
           <h1>
             Fuel Your Ambition, One <span className="hero-green">Meal at a Time.</span>
           </h1>
+
+          <a href="#" className="hero-mobile-corner-brand">
+            <img src={logo} alt="CalPal" />
+            <span>CalPal</span>
+          </a>
+
+          <div className="hero-mobile-highlights">
+            <span>AI-Powered</span>
+            <span>Free Core Tracking</span>
+            <span>Simple Daily Flow</span>
+          </div>
+
+          <p className="hero-mobile-copy">
+            CalPal helps you track meals faster, stay consistent, and make better nutrition decisions—because chaos is fun, just not in your calorie log.
+          </p>
+          <a
+            className="hero-mobile-cta"
+            href="https://groups.google.com/g/calpal-testers"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join Now
+          </a>
 
           <div className="hero-creator-card">
             <span className="creator-caption">Built by</span>
