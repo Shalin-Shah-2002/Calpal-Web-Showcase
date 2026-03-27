@@ -105,9 +105,29 @@
   text-decoration: none;
 }
 
-.privacy-top-nav .nav-privacy[aria-current='page'] {
-  color: #00c753;
+.privacy-top-nav .nav-cta {
+  position: absolute;
+  left: 1058px;
+  top: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 44px;
+  padding: 10px 24px;
+  background: #00c753;
+  color: #000;
+  text-decoration: none;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
   font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .privacy-top-nav .nav-cta {
+    left: auto;
+    right: 16px;
+  }
 }
 
 .privacy-hero {
@@ -406,6 +426,14 @@
     font-size: 13px;
   }
 
+  .privacy-top-nav .nav-cta {
+    position: static;
+    order: 2;
+    margin-left: auto;
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
   .privacy-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -454,6 +482,10 @@
 
   .privacy-top-nav .brand-wrap span {
     font-size: 22px;
+  }
+
+  .privacy-top-nav .nav-cta {
+    padding: 8px 16px;
   }
 
   .privacy-hero,
