@@ -216,7 +216,7 @@ function App() {
               <a className="nav-features" href="#features">Features</a>
               <a className="nav-about" href="#about">About</a>
               <a className="nav-why" href="#why-calpal">Why CalPal?</a>
-              <a className="nav-privacy" href="/privacy-policy">Privacy Policy</a>
+              <a className="nav-privacy" href="/privacy-policy.html">Privacy Policy</a>
             </nav>
             <a
               className="nav-cta"

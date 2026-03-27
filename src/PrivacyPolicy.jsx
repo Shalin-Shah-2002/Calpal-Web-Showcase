@@ -48,26 +48,42 @@ const sections = [
   {
     id: 'data-security-and-retention',
     number: '5',
-    title: 'Data Security And Retention',
+    title: 'Data Security, Retention, And Deletion',
     points: [
       'We use reasonable administrative, technical, and organizational security controls to protect stored and transmitted data.',
-      'Data is retained only as long as needed for product operation, compliance, dispute resolution, and legitimate business purposes.',
-      'When data is no longer needed, we take reasonable steps to delete or de-identify it.',
+      'Account and nutrition log data is retained while your account is active so the app can provide tracking, history, and insights.',
+      'If your account is inactive for 24 months, we may delete or permanently de-identify associated account data from active systems.',
+      'Support requests and feedback records are typically kept for up to 12 months to resolve issues and improve service quality.',
+      'Security and operational backups are encrypted and automatically rotated; backup data is generally deleted within 35 days.',
+      'When data is no longer needed for legal, security, or operational reasons, we delete or permanently de-identify it.',
+    ],
+  },
+  {
+    id: 'how-to-request-data-deletion',
+    number: '6',
+    title: 'How To Request Data Deletion',
+    points: [
+      'To request deletion of your CalPal account data, email 2002shalin@gmail.com from your registered email address with the subject line "Delete My CalPal Data".',
+      'Please include identifiers needed to find your account (for example, your login email and display name).',
+      'We first verify deletion requests to protect users from unauthorized account actions.',
+      'After verification, we delete or permanently de-identify account data from active systems within 30 days in most cases.',
+      'Some limited records may be retained for longer when required by law, fraud prevention, security, tax, or dispute resolution obligations.',
+      'If your app version includes an in-app account deletion option, you may use it instead of email and we process it on the same timeline.',
     ],
   },
   {
     id: 'your-choices-and-rights',
-    number: '6',
+    number: '7',
     title: 'Your Choices And Rights',
     points: [
       'You can review and edit key profile information directly inside the app experience.',
-      'You can request account-related privacy support, including access or deletion requests, by contacting us.',
+      'You can request account-related privacy support, including access, correction, or deletion requests, by contacting us.',
       'Depending on your location, local privacy laws may provide additional rights regarding your personal data.',
     ],
   },
   {
     id: 'childrens-privacy',
-    number: '7',
+    number: '8',
     title: 'Children\'s Privacy',
     points: [
       'CalPal is not intended for children under the minimum age required by applicable law without parental or guardian involvement.',
@@ -76,7 +92,7 @@ const sections = [
   },
   {
     id: 'changes-to-this-policy',
-    number: '8',
+    number: '9',
     title: 'Changes To This Policy',
     points: [
       'We may update this Privacy Policy from time to time to reflect product, legal, or operational changes.',
@@ -87,7 +103,7 @@ const sections = [
 
 function PrivacyPolicy() {
   const lastUpdated = '27 March 2026'
-  const trustSignals = ['Google Play ready disclosure', 'User data transparency', 'Account control and support']
+  const trustSignals = ['Google Play ready disclosure', 'User data transparency', 'Retention and deletion timelines']
 
   return (
     <main className="privacy-page-wrap">
@@ -103,8 +119,16 @@ function PrivacyPolicy() {
             <a className="nav-features" href="/#features">Features</a>
             <a className="nav-about" href="/#about">About</a>
             <a className="nav-why" href="/#why-calpal">Why CalPal?</a>
-            <a className="nav-privacy" href="/privacy-policy" aria-current="page">Privacy Policy</a>
+            <a className="nav-privacy" href="/privacy-policy.html" aria-current="page">Privacy Policy</a>
           </nav>
+          <a
+            className="nav-cta"
+            href="https://groups.google.com/g/calpal-testers"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join Waitlist
+          </a>
         </header>
 
         <section className="privacy-hero">
@@ -112,7 +136,8 @@ function PrivacyPolicy() {
           <h1>CalPal Privacy Policy</h1>
           <p className="privacy-lead">
             This policy explains how CalPal collects, uses, protects, and discloses data when you use our app and website.
-            It is written to support transparency expectations for users and app distribution platforms including Google Play.
+            It is written to support transparency expectations for users and app distribution platforms including Google Play,
+            including clear retention periods and deletion request instructions.
           </p>
           <p className="privacy-updated">Last updated: {lastUpdated}</p>
 
@@ -155,14 +180,18 @@ function PrivacyPolicy() {
 
         <section className="privacy-contact-card">
           <h2>
-            <span className="privacy-card-index">9</span>
+            <span className="privacy-card-index">10</span>
             Contact Us
           </h2>
           <p>
             For privacy requests, policy questions, or account-related concerns, contact the CalPal team at
             {' '}
-            <a href="mailto:privacy@calpal.app">privacy@calpal.app</a>
+              <a href="mailto:2002shalin@gmail.com">2002shalin@gmail.com</a>
             .
+          </p>
+          <p>
+            For deletion requests, email from your registered account with the subject line "Delete My CalPal Data".
+            We verify requests first, then process deletion from active systems within 30 days in most cases.
           </p>
           <p>
             If your published support email differs from this address, replace it with your official developer contact before release.
