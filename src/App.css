@@ -158,21 +158,22 @@ svg {
 
 .top-nav nav {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 66px;
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.1vw, 34px);
 }
 
 .top-nav a {
-  position: absolute;
   color: #f1f5f9;
   font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
 }
-
-.top-nav a.nav-features { left: 461px; top: 21px; }
-.top-nav a.nav-about { left: 585px; top: 21px; }
-.top-nav a.nav-why { left: 680px; top: 21px; }
 
 .top-nav .nav-cta {
   position: absolute;
@@ -1242,9 +1243,6 @@ svg {
     --hero-card-top: 318px;
   }
 
-  .top-nav a.nav-features { left: 42%; }
-  .top-nav a.nav-about { left: 54%; }
-  .top-nav a.nav-why { left: 63%; }
   .top-nav .nav-cta { left: auto; right: 16px; }
 
   .hero h1 {
