@@ -15,6 +15,11 @@
       "source": "smithery.ai",
       "sourceType": "well-known",
       "computedHash": "3cd5dd04d8030ed4bf0fb008f584e07108fb6af811e789ba195d7c4493579125"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "computedHash": "0a413bf988d06481f69bb81df2070741c3ba12dd9f1be2706d57f259c905992d"
     }
   }
 }

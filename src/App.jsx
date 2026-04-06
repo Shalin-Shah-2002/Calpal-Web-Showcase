@@ -4,10 +4,12 @@ import footerSocials from './assets/footer-socials.svg'
 import heroVideo from './assets/Cinematic_Running_Man_Phone_App.mp4'
 import heroWaveCombined from './assets/hero-wave-combined.svg'
 import logo from './assets/logo.png'
-import midOverlay from './assets/mid-overlay.svg'
-import midPhones from './assets/mid-phones.svg'
 import phoneShot from './assets/phone-shot.png'
-import sectionBackground from './assets/section-bg.png'
+import screenshotHistory from '../Assets/Screenshot_1775132328.png'
+import screenshotHome from '../Assets/Screenshot_1775132330.png'
+import screenshotMealSearch from '../Assets/Screenshot_1775132333.png'
+import screenshotProfile from '../Assets/Screenshot_1775132336.png'
+import screenshotQuickPicks from '../Assets/Screenshot_1775132345.png'
 
 function App() {
   const heroRef = useRef(null)
@@ -48,141 +50,149 @@ function App() {
     }
   }, [])
 
-  const whyCards = [
-    { icon: 'wallet', title: 'Free Core Tracking', body: 'Compared to many calorie apps that lock basics behind paywalls, CalPal keeps core logging accessible.' },
-    { icon: 'spark', title: 'Smarter AI Guidance', body: 'Unlike static calculators, CalPal uses Gemini-powered insights to help personalize your nutrition decisions.' },
-    { icon: 'bolt', title: 'Fast, Minimal Workflow', body: 'Many apps feel cluttered with too many tabs. CalPal stays focused so logging stays quick and clean.' },
-    { icon: 'signal', title: 'Works Beyond Perfect Internet', body: 'Where some tools rely heavily on constant connectivity, CalPal supports practical use when network quality drops.' },
-    { icon: 'target', title: 'Flexible Goal System', body: 'Instead of one rigid plan, CalPal supports calorie and macro targets that adapt to different fitness styles.' },
-    { icon: 'bellOff', title: 'Low-Noise Experience', body: 'Compared with ad-heavy alternatives, CalPal is built to reduce distractions and keep focus on progress.' },
+  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.shalinshah.calpal&hl=en_IN'
+
+  const darkModeScreens = [
+    {
+      src: screenshotHome,
+      title: 'Daily Home Dashboard',
+      detail: 'A focused overview for calories, macros, and meal progress in one glance.',
+      alt: 'CalPal home dashboard showing calorie goal ring and macro summary in dark mode',
+    },
+    {
+      src: screenshotMealSearch,
+      title: 'AI Meal Search',
+      detail: 'Instant meal lookup with Gemini-assisted input and quick search actions.',
+      alt: 'CalPal add meal panel with AI search field and portion input in dark mode',
+    },
+    {
+      src: screenshotHistory,
+      title: 'History And Streaks',
+      detail: 'Calendar streak tracking that makes consistency visible and motivating.',
+      alt: 'CalPal history screen with streak heatmap and weekly log strip in dark mode',
+    },
+    {
+      src: screenshotProfile,
+      title: 'Profile And Goals',
+      detail: 'Health goals, account setup, and quick settings organized in clean cards.',
+      alt: 'CalPal profile page with health goals and quick actions in dark mode',
+    },
+    {
+      src: screenshotQuickPicks,
+      title: 'Quick Picks Flow',
+      detail: 'Reusable quick picks accelerate meal logging when you are in a rush.',
+      alt: 'CalPal add meal modal with quick picks chips and search action in dark mode',
+    },
+  ]
+
+  const trustStats = [
+    {
+      value: '8 sec',
+      label: 'Average meal log time',
+    },
+    {
+      value: '5 / day',
+      label: 'Free logs available daily',
+    },
+    {
+      value: '24/7',
+      label: 'AI-assisted recommendations',
+    },
+    {
+      value: '100%',
+      label: 'Dark mode native experience',
+    },
+  ]
+
+  const journeySteps = [
+    {
+      title: 'Describe Your Meal',
+      body: 'Type a simple phrase like apple and peanut butter. CalPal parses context and quantity prompts instantly.',
+    },
+    {
+      title: 'Confirm Portion Details',
+      body: 'Pick serving size, adjust quickly, and save. The flow stays focused on one decision at a time.',
+    },
+    {
+      title: 'Track Progress Daily',
+      body: 'Watch calories, macros, streaks, and goal pacing update in real time across home and history.',
+    },
   ]
 
   const featureCards = [
     {
-      icon: 'search',
-      title: 'Track Your Calories for Free',
-      body: 'Log meals quickly and track your calories without paying anything. Simple, fast, and built for daily use.',
-      peekSide: 'left',
+      title: 'AI Meal Understanding',
+      body: 'Gemini-assisted parsing helps interpret natural meal text without forcing rigid form fields.',
+      tag: 'Intelligence',
     },
     {
-      icon: 'dashboard',
-      title: 'AI Health Profile + Weekly Plans',
-      body: 'Add your height, weight, and other health details to get AI-generated calorie plans updated every week.',
+      title: 'Macro And Calorie Ring',
+      body: 'One central visual ring keeps daily intake status obvious without navigating through multiple tabs.',
+      tag: 'Clarity',
     },
     {
-      icon: 'privacy',
-      title: 'No API Key Needed (Coming Soon)',
-      body: 'We’re removing the need for users to add their own API key and moving to a cleaner, more reliable Gemini 2.5 Flash-Lite experience for non-tech users.',
-      peekSide: 'right',
+      title: 'Streak Heatmap',
+      body: 'Consistency is visible through a timeline heatmap that rewards repeated behavior, not perfection.',
+      tag: 'Retention',
+    },
+    {
+      title: 'Quick Picks',
+      body: 'Common foods become one-tap chips so repeat logging stays fast even on busy days.',
+      tag: 'Speed',
+    },
+    {
+      title: 'Profile Driven Guidance',
+      body: 'Goals and health profile inputs shape suggestions so recommendations stay relevant to each user.',
+      tag: 'Personalization',
+    },
+    {
+      title: 'Privacy-First Foundation',
+      body: 'Core workflows are built with secure handling and clear policy links from key touchpoints.',
+      tag: 'Trust',
     },
   ]
 
-  const renderFeatureIcon = (icon) => {
-    const common = {
-      viewBox: '0 0 24 24',
-      fill: 'none',
-      stroke: 'currentColor',
-      strokeWidth: '1.9',
-      strokeLinecap: 'round',
-      strokeLinejoin: 'round',
-      'aria-hidden': 'true',
-      className: 'feature-icon-svg',
-    }
+  const stickReasons = [
+    {
+      title: 'Built For Daily Use',
+      body: 'The interface favors low-friction actions so users can keep logging even on chaotic days.',
+    },
+    {
+      title: 'High Contrast By Design',
+      body: 'The dark palette is not an afterthought. Typography and surfaces stay readable in low light.',
+    },
+    {
+      title: 'Actionable, Not Overloaded',
+      body: 'CalPal shows what matters now, goals, progress, and next action, instead of data clutter.',
+    },
+    {
+      title: 'Optimized For Mobile Rhythm',
+      body: 'Touch sizes, spacing, and section density are tuned for one-handed mobile use.',
+    },
+  ]
 
-    switch (icon) {
-      case 'search':
-        return (
-          <svg {...common}>
-            <circle cx="11" cy="11" r="5.5" />
-            <path d="M15.2 15.2L19 19" />
-          </svg>
-        )
-      case 'dashboard':
-        return (
-          <svg {...common}>
-            <rect x="4" y="4" width="6.5" height="6.5" rx="1.3" />
-            <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.3" />
-            <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.3" />
-            <path d="M17 13.5v6.5" />
-            <path d="M13.75 16.75h6.5" />
-          </svg>
-        )
-      case 'privacy':
-        return (
-          <svg {...common}>
-            <path d="M12 3l6 2.4v5.3c0 4.2-2.5 7.8-6 9.3-3.5-1.5-6-5.1-6-9.3V5.4z" />
-            <rect x="9.2" y="10.5" width="5.6" height="4.8" rx="1.2" />
-            <path d="M10.2 10.5V9.3a1.8 1.8 0 1 1 3.6 0v1.2" />
-          </svg>
-        )
-      default:
-        return null
-    }
-  }
-
-  const renderWhyIcon = (icon) => {
-    const common = {
-      viewBox: '0 0 24 24',
-      fill: 'none',
-      stroke: 'currentColor',
-      strokeWidth: '1.9',
-      strokeLinecap: 'round',
-      strokeLinejoin: 'round',
-      'aria-hidden': 'true',
-      className: 'why-icon-svg',
-    }
-
-    switch (icon) {
-      case 'wallet':
-        return (
-          <svg {...common}>
-            <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h11A2.5 2.5 0 0 1 19 7.5v9A2.5 2.5 0 0 1 16.5 19h-11A2.5 2.5 0 0 1 3 16.5z" />
-            <path d="M16 12h5v3h-5a1.5 1.5 0 0 1 0-3z" />
-          </svg>
-        )
-      case 'spark':
-        return (
-          <svg {...common}>
-            <path d="M12 3l1.6 3.9L17.5 8.5l-3.9 1.6L12 14l-1.6-3.9L6.5 8.5l3.9-1.6z" />
-            <path d="M18.5 14.5l.8 2 .2.8.8.2 2 .8-2 .8-.8.2-.2.8-.8 2-.8-2-.2-.8-.8-.2-2-.8 2-.8.8-.2.2-.8z" />
-          </svg>
-        )
-      case 'bolt':
-        return (
-          <svg {...common}>
-            <path d="M13 2L5 13h5l-1 9 8-11h-5z" />
-          </svg>
-        )
-      case 'signal':
-        return (
-          <svg {...common}>
-            <path d="M4 18a8 8 0 0 1 8-8" />
-            <path d="M4 13a13 13 0 0 1 13-13" />
-            <path d="M9 18a3 3 0 0 1 3-3" />
-            <circle cx="17.5" cy="18" r="1.5" />
-          </svg>
-        )
-      case 'target':
-        return (
-          <svg {...common}>
-            <circle cx="12" cy="12" r="8" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" />
-          </svg>
-        )
-      case 'bellOff':
-        return (
-          <svg {...common}>
-            <path d="M14.5 18a2.5 2.5 0 0 1-5 0" />
-            <path d="M18 13.5V11a6 6 0 0 0-8.9-5.3" />
-            <path d="M6 6.2A6 6 0 0 0 6 11v2.5L4 16h16" />
-            <path d="M3 3l18 18" />
-          </svg>
-        )
-      default:
-        return null
-    }
-  }
+  const faqItems = [
+    {
+      question: 'Is CalPal free?',
+      answer: 'Yes. Core calorie and meal logging are free to use every day.',
+    },
+    {
+      question: 'Is it beginner friendly?',
+      answer: 'Yes. You can log with plain language and receive guided prompts for portions.',
+    },
+    {
+      question: 'How does AI help me?',
+      answer: 'AI assists meal parsing, profile recommendations, and weekly guidance adjustments.',
+    },
+    {
+      question: 'Where can I review privacy details?',
+      answer: 'You can open the Privacy Policy page linked in the navigation and footer.',
+    },
+    {
+      question: 'Is CalPal available on Android now?',
+      answer: 'Yes. The app is live on Google Play through the official listing.',
+    },
+  ]
 
   return (
     <main className="page-wrap">
@@ -220,11 +230,11 @@ function App() {
             </nav>
             <a
               className="nav-cta"
-              href="https://groups.google.com/g/calpal-testers"
+              href={playStoreUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Join Waitlist
+              Download
             </a>
           </header>
 
@@ -248,11 +258,11 @@ function App() {
           </p>
           <a
             className="hero-mobile-cta"
-            href="https://groups.google.com/g/calpal-testers"
+            href={playStoreUrl}
             target="_blank"
             rel="noreferrer"
           >
-            Join Now
+            Download
           </a>
 
           <div className="hero-creator-card">
@@ -294,124 +304,204 @@ function App() {
           </div>
         </section>
 
-        <section className="mid-showcase" id="about">
-          <img className="mid-bg" src={sectionBackground} alt="" />
-          <img className="mid-overlay" src={midOverlay} alt="" />
-          <img className="mid-phones" src={midPhones} alt="App screenshot collage" />
-
-          <div className="mid-title">
-            <div className="mid-what">What is</div>
-            <div className="mid-calpal">CalPal ?</div>
-            <p>The Simplest Way to Stay on Track.</p>
-          </div>
-
-          <div className="mid-copy">
-            <div className="logos">
-              <img src={logo} alt="" />
-              <img src={logo} alt="" />
-              <img src={logo} alt="" />
-            </div>
+        <section className="app-signal-band" aria-label="CalPal launch highlight">
+          <div className="app-signal-copy">
+            <p className="app-kicker">Now live on Google Play</p>
+            <h2>Built for people who want faster nutrition tracking with less friction.</h2>
             <p>
-              CalPal is an AI-powered fitness and nutrition companion.
-              <br />
-              <br />
-              It is built to make healthy living effortless.
-              <br />
-              <br />
-              You can type what you ate in plain language.
+              CalPal combines AI meal understanding, clear daily goals, and a strong dark-mode UI so tracking feels lightweight and sustainable.
             </p>
+            <div className="app-cta-row">
+              <a className="app-primary-btn" href={playStoreUrl} target="_blank" rel="noreferrer">Download</a>
+            </div>
           </div>
-        </section>
 
-        <section className="features" id="features">
-          <h2>Features</h2>
-          <p>Stop guessing. Start knowing exactly what goes into your body.</p>
-          <div className="feature-grid">
-            {featureCards.map((card) => (
-              <article
-                key={card.title}
-                className={`feature-card glass ${card.peekSide ? `peek-card peek-${card.peekSide}` : ''}`.trim()}
-              >
-                <span className="feature-icon" aria-hidden="true">{renderFeatureIcon(card.icon)}</span>
-                <h3>{card.title}</h3>
-                <p>{card.body}</p>
-                {card.peekSide ? (
-                  <img className={`peep-guy peep-${card.peekSide}`} src="/Guy_Peeping.png" alt="" aria-hidden="true" />
-                ) : null}
+          <div className="app-stat-grid" role="list" aria-label="CalPal product highlights">
+            {trustStats.map((item) => (
+              <article key={item.label} className="app-stat-card" role="listitem">
+                <p className="app-stat-value">{item.value}</p>
+                <p className="app-stat-label">{item.label}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="why-calpal" id="why-calpal">
-          <h2>Why CalPal?</h2>
-          <p>Built to solve common calorie-tracker pain points: paywalls, clutter, and low-quality personalization.</p>
-          <div className="why-grid">
-            {whyCards.map((card) => (
-              <article className="why-card glass" key={card.title}>
-                <span className="why-icon" aria-hidden="true">{renderWhyIcon(card.icon)}</span>
-                <h4>{card.title}</h4>
-                <p>{card.body}</p>
+        <section className="app-about-shell" id="about">
+          <div className="app-about-copy">
+            <p className="app-kicker">About CalPal</p>
+            <h2>Nutrition tracking that feels like a guided flow, not a spreadsheet.</h2>
+            <p>
+              Designed for daily consistency, CalPal helps users log quickly, see progress clearly, and adjust behavior with practical AI suggestions.
+            </p>
+            <ul className="app-benefit-list" aria-label="CalPal key strengths">
+              <li><span aria-hidden="true" />Natural language meal capture</li>
+              <li><span aria-hidden="true" />Fast repeat logging with quick picks</li>
+              <li><span aria-hidden="true" />Goal-focused dashboard and streak timeline</li>
+            </ul>
+          </div>
+
+          <article className="app-device-card app-device-card-feature">
+            <div className="app-device-frame">
+              <span className="app-device-camera" aria-hidden="true" />
+              <span className="app-device-side app-device-side-top" aria-hidden="true" />
+              <span className="app-device-side app-device-side-bottom" aria-hidden="true" />
+              <div className="app-device-screen-wrap">
+                <img
+                  src={screenshotHome}
+                  alt="CalPal home screen with calorie ring and macro summary"
+                  loading="lazy"
+                  width="1080"
+                  height="2424"
+                />
+              </div>
+              <span className="app-device-gesture" aria-hidden="true" />
+            </div>
+            <div className="app-device-meta">
+              <h3>Daily dashboard focus</h3>
+              <p>One screen for daily calories, macros, and logging status so decisions are immediate.</p>
+            </div>
+          </article>
+        </section>
+
+        <section className="app-flow-shell" id="how-it-works">
+          <header className="app-section-head app-section-head-center">
+            <p className="app-kicker">How it works</p>
+            <h2>From meal thought to logged result in three lightweight steps.</h2>
+          </header>
+
+          <div className="app-flow-grid">
+            {journeySteps.map((step, index) => (
+              <article key={step.title} className="app-flow-card">
+                <span className="app-flow-index" aria-hidden="true">0{index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="beta-section">
-          <div className="beta-main glass-card">
-            <div className="beta-left">
-              <div className="beta-chip">Currently in Closed Testing</div>
-              <h2>Join CalPal Closed Testing</h2>
-              <p>
-                Get early access to CalPal and help us improve the app.
-                <br />
-                Experience the future of fitness tracking before anyone else.
-              </p>
-              <a className="beta-cta" href="https://groups.google.com/g/calpal-testers" target="_blank" rel="noreferrer">Click Here to Join Closed Testing</a>
-              <div className="beta-note">Highlight: Please keep the app installed for at least 14 days (Google Play testing policy).</div>
-            </div>
-            <div className="beta-right">
-              <img src={phoneShot} alt="Modern fitness tracking app interface" />
+        <section className="app-feature-shell" id="features">
+          <header className="app-section-head">
+            <p className="app-kicker">Feature system</p>
+            <h2>Purpose-built modules that support speed, clarity, and long-term consistency.</h2>
+          </header>
+
+          <div className="app-feature-grid">
+            {featureCards.map((feature) => (
+              <article key={feature.title} className="app-feature-card">
+                <span className="app-feature-tag">{feature.tag}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="app-screens-shell" id="screens">
+          <header className="app-section-head app-section-head-center">
+            <p className="app-kicker">Dark mode screenshots</p>
+            <h2>Real app screens, framed to show the full mobile product experience.</h2>
+          </header>
+
+          <div className="app-screens-track" role="list" aria-label="CalPal screenshot gallery">
+            {darkModeScreens.map((screen, index) => (
+              <article key={`${screen.title}-${index}`} className="app-screen-card" role="listitem">
+                <div className="app-device-frame">
+                  <span className="app-device-camera" aria-hidden="true" />
+                  <span className="app-device-side app-device-side-top" aria-hidden="true" />
+                  <span className="app-device-side app-device-side-bottom" aria-hidden="true" />
+                  <div className="app-device-screen-wrap">
+                    <img src={screen.src} alt={screen.alt} loading="lazy" width="1080" height="2424" />
+                  </div>
+                  <span className="app-device-gesture" aria-hidden="true" />
+                </div>
+
+                <div className="app-screen-meta">
+                  <h3>{screen.title}</h3>
+                  <p>{screen.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="app-why-shell" id="why-calpal">
+          <header className="app-section-head">
+            <p className="app-kicker">Why CalPal</p>
+            <h2>People stick with CalPal because the product reduces friction at every step.</h2>
+          </header>
+
+          <div className="app-why-grid">
+            {stickReasons.map((reason) => (
+              <article key={reason.title} className="app-why-card">
+                <h3>{reason.title}</h3>
+                <p>{reason.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="app-faq-shell" id="faq">
+          <header className="app-section-head app-section-head-center">
+            <p className="app-kicker">FAQ</p>
+            <h2>Answers to common questions before you download.</h2>
+          </header>
+
+          <div className="app-faq-grid">
+            {faqItems.map((item) => (
+              <article key={item.question} className="app-faq-card">
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="app-final-cta">
+          <div className="app-final-cta-card">
+            <h2>Ready to track smarter without burning out?</h2>
+            <p>Download CalPal and turn nutrition consistency into a daily habit you can actually maintain.</p>
+            <div className="app-cta-row app-cta-row-center">
+              <a className="app-primary-btn" href={playStoreUrl} target="_blank" rel="noreferrer">Download</a>
+              <a className="app-ghost-btn" href="/privacy-policy.html">Read Privacy Policy</a>
             </div>
           </div>
         </section>
 
-        <section className="req-grid">
-          <article className="req-card glass"><h4>Secure</h4><p>Safe and encrypted testing environment.</p></article>
-          <article className="req-card glass"><h4>Verified</h4><p>Official Google Play Store validation.</p></article>
-          <article className="req-card glass"><h4>14 Days</h4><p>Required active testing duration.</p></article>
-        </section>
-
-        <footer className="footer">
-          <div className="footer-main">
-            <div className="brand-wrap footer-brand">
+        <footer className="app-footer">
+          <div className="app-footer-main">
+            <div className="brand-wrap app-footer-brand">
               <img src={logo} alt="CalPal" />
               <span>CalPal</span>
             </div>
 
-            <p className="footer-motto">Healthy goals, zero drama, and fewer “what did I eat?” moments.</p>
-            <p className="footer-copy">CalPal helps you track smarter with AI support while keeping your daily workflow clean and practical.</p>
+            <p className="app-footer-copy">
+              CalPal is built for real-world nutrition tracking, AI-assisted guidance, and a cleaner daily routine.
+            </p>
 
-            <div className="footer-links">
-              <a href="#features">Features</a>
+            <div className="app-footer-links">
               <a href="#about">About</a>
-              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="#features">Features</a>
+              <a href="#screens">Screens</a>
+              <a href="#faq">FAQ</a>
+              <a href={playStoreUrl} target="_blank" rel="noreferrer">Google Play</a>
+              <a href="/privacy-policy.html">Privacy Policy</a>
             </div>
 
-            <div className="footer-creator">
+            <div className="app-footer-meta">
               <span>Built by Shalin Shah</span>
-              <div className="footer-creator-links">
+              <div className="app-footer-meta-links">
                 <a href="https://github.com/Shalin-Shah-2002" target="_blank" rel="noreferrer">GitHub</a>
                 <a href="https://www.linkedin.com/in/shalin-shah0705/" target="_blank" rel="noreferrer">LinkedIn</a>
               </div>
             </div>
 
-            <img className="footer-socials" src={footerSocials} alt="Social links" />
+            <img className="app-footer-socials" src={footerSocials} alt="" aria-hidden="true" />
           </div>
 
-          <div className="footer-bottom">
+          <div className="app-footer-bottom">
             <span>© 2026 CalPal AI. All rights reserved.</span>
-            <span>Built with focus, consistency, and a little caffeine.</span>
+            <span>Crafted for consistency, speed, and clarity.</span>
           </div>
         </footer>
       </div>
