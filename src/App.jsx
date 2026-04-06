@@ -313,7 +313,6 @@ function App() {
             </p>
             <div className="app-cta-row">
               <a className="app-primary-btn" href={playStoreUrl} target="_blank" rel="noreferrer">Download</a>
-              <a className="app-ghost-btn" href={playStoreUrl} target="_blank" rel="noreferrer">Download</a>
             </div>
           </div>
 
